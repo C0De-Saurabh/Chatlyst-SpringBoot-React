@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: newuser
+    password: StrongPassword
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+  redis:
+    data:
+      host: localhost
+      port: 6379
+
+  cache:
+    type: redis
+    redis:
+      time-to-live: 60000
+
+
+
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 777307739490-609vkum3dabkj01m95t0q2bn69tti1nc.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - profile
+              - email
+            redirect-uri: "http://localhost:8080/login/oauth2/code/google"

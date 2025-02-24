@@ -1,6 +1,5 @@
 package com.example.messenger.controller;
 
-import org.springframework.beans.factory.support.ManagedProperties;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

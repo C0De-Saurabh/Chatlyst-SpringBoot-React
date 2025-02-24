@@ -19,7 +19,7 @@ public class Conversation {
     private String name;
 
     @Column(nullable = false)
-    boolean isGroupChat;
+    private boolean isGroupChat;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;

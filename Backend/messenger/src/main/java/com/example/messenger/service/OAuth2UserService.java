@@ -1,6 +1,6 @@
 package com.example.messenger.service;
 
-import com.example.messenger.entity.User;
+import com.example.messenger.model.User;
 import com.example.messenger.repository.UserRepository;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
@@ -31,7 +31,7 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
             User newUser = new User();
             newUser.setEmail(email);
             newUser.setName(name);
-            newUser.setPicture(picture);
+            newUser.setProfilePicture(picture);
             return userRepository.save(newUser);
         });
 

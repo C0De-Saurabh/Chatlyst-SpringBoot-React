@@ -1,6 +1,5 @@
 package com.example.messenger.controller;
-
-import com.example.messenger.entity.User;
+import com.example.messenger.model.User;
 import com.example.messenger.repository.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -8,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.*;
@@ -40,6 +38,7 @@ public class AuthController {
 
     /**
      * Fetches the authenticated user from the database.
+     * If the user does not exist, creates a new user in the database.
      */
     @GetMapping("/user/db")
     public User getUserFromDB(@AuthenticationPrincipal OAuth2User principal) {

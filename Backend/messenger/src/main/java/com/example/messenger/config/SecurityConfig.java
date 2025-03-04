@@ -14,7 +14,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/auth/user", "/auth/user/db").authenticated() // Only authenticated users
+                      //  .requestMatchers("/auth/user", "/auth/user/db").authenticated() // Only authenticated users
                         .anyRequest().permitAll() // Other routes are public
                 )
                 .oauth2Login(oauth2 -> oauth2
